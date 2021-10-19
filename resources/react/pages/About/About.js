@@ -28,7 +28,7 @@ const About = () => {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    <a href="https://studio.com" target="_blank" className="w-100 max-w-500 text-decoration-none">
+                    <a className="w-100 max-w-500 text-decoration-none" onClick={() => alert('준비중입니다')}>
                         <Button label="스튜디오 예약" className="btn-color-purple"/>
                     </a>
                 </div>
