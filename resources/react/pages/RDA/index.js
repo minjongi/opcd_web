@@ -418,16 +418,22 @@ const RDA = () => {
                     {campaigns.map((camp, index) => 
                       <div key={index} className="rda_campaign_item">
                         <p className="font-18">{camp.title}</p>
-                          {camp.description && <p className="font-16"><pre>{camp.description}</pre></p> }
-                        <a href={camp.url || ''} target="blank" className="rda-button w-8-rem mb-3">상세보기</a>
-                        <div className="inline-group align-items-center">
-                          <label>음원코드</label>
-                          <div className="flex-1 mr-3" style={{border: '1px solid #000', padding: '7px 5px 4px'}}>
-                            <input style={{border: '0'}} value={camp.code || ''} onChange={(e) => handleChangeCode(index, e)}/>
-                          </div>
-                          <div className="rda-button" style={{width: '100px'}} onClick={() => handlePostRequest(index)}>참가신청</div>
+                        <div className="content">
+                            <div className="content-inner">
+                                {camp.description && <p className="description font-16">{camp.description}</p> }
+                                <a href={camp.url || ''} target="blank" className="rda-button w-8-rem mb-3">상세보기</a>
+                            </div>
+                            <div className="content-inner">
+                                <div>음원코드를 입력해주세요.</div>
+                                <div className="inline-group align-items-center">
+                                    <div className="flex-1 mr-3" style={{border: '1px solid #000', padding: '7px 5px 4px'}}>
+                                        <input style={{border: '0'}} value={camp.code || ''} onChange={(e) => handleChangeCode(index, e)}/>
+                                    </div>
+                                    <div className="rda-button" style={{width: '100px'}} onClick={() => handlePostRequest(index)}>참가신청</div>
+                                </div>
+                            </div>
                         </div>
-                      </div>  
+                      </div>
                     )}
                   </div>
                 }

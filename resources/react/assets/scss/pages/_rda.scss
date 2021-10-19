@@ -274,6 +274,24 @@
             &:last-child {
                 margin-bottom: 0;
             }
+
+            .description {
+                white-space:pre;
+            }
+
+            .content {
+                width: 100%;
+
+                .content-inner {
+                    display: inline-block;
+                    width: 50%;
+
+                    @media only screen and (max-width: 768px) {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }
