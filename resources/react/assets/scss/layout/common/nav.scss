@@ -1,0 +1,246 @@
+.nav-bar {
+    .nav-menu {
+        background-color: $primary;
+        color: #fff;
+        border-bottom: 1px solid $border-color;
+        .section {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            .nav-menu-inner {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    text-transform: uppercase;
+                    li.menu-item {
+                        font-size: 22px;
+                        font-weight: bold;
+                        padding: 20px 48px 20px 5px;
+                        margin: -1px 0;
+                        cursor: pointer;
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                        &.selected,
+                        &:hover {
+                            color: $link-hover-color;
+                        }
+                    }
+                }
+            }
+            .nav-search-bar {
+                flex: 1;
+                padding-left: 20px;
+                .search-bar {
+                    margin-left: auto;
+                    width: 100%;
+                    max-width: 320px;
+                }
+                .search-icon {
+                    display: none;
+                }
+                @media only screen and (max-width: 900px) {
+                    .search-bar {
+                        display: none;
+                    }
+                    .search-icon {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    
+    .mega-menu-wrapper {
+        position: relative;
+        height: 0;
+        z-index: 999;
+        .mega-menu {
+            position: absolute;
+            width: 100%;
+            display: none;
+            background-color: $primary;
+            &.show,
+            &:hover {
+                display: block;
+                // animation: fadein 0.5s;
+                // -moz-animation: fadein 0.5s; /* Firefox */
+                // -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+                // -o-animation: fadein 0.5s; /* Opera */
+            }
+            .mega-menu-inner {
+                height: 152px;
+                display: flex;
+                .mega-menu-group {
+                    position: relative;
+                    // margin-left: 5px;
+                    text-transform: uppercase;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    ul {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            font-size: 16px;
+                            margin-top: 20px;
+                            a {
+                                color: #fff;
+                                &:hover {
+                                    color: $link-hover-color;
+                                }
+                            }
+                        }
+                    }
+                    .menu-item {
+                        font-size: 22px;
+                        margin: 0 48px 0 5px;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-moz-keyframes fadein { /* Firefox */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadein { /* Safari and Chrome */
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadein { /* Opera */
+        from {
+            opacity:1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    &.desktop {
+        display: none;
+    }
+    &.mobile {
+        display: block;
+        .nav-menu {
+            .section {
+                display: block;
+                .nav-menu-inner {
+                    ul {
+                        justify-content: space-between;
+                        li.menu-item {
+                            font-size: 14px;
+                            padding: 20px 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .mega-menu-wrapper {
+            .mega-menu {
+                padding-bottom: 20px;
+                .mega-menu-inner {
+                    height: auto;
+                    display: block;
+                    .mega-menu-group {
+                        display: none;
+                        &.active {
+                            display: block;
+                        }
+                        ul {
+                            position: unset;
+                            text-align: center;
+                            li {
+                                font-size: 14px;
+                            }
+                        }
+                        .menu-item {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 360px) {
+        &.mobile {
+            .nav-menu .section {
+                .nav-menu-inner ul {
+                    li.menu-item {
+                        font-size: 14px;
+                        padding: 20px 8px;
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 420px) {
+        &.mobile {
+            .nav-menu .section {
+                .nav-menu-inner ul {
+                    li.menu-item {
+                        font-size: 16px;
+                        padding: 20px 8px;
+                    }
+                }
+            }
+            .mega-menu-wrapper .mega-menu {
+                .mega-menu-inner .mega-menu-group {
+                    ul li {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 500px) {
+        &.mobile {
+            .nav-menu .section {
+                .nav-menu-inner ul {
+                    li.menu-item {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        &.mobile {
+            display: none;
+        }
+        &.desktop {
+            display: block;
+        }
+    }
+}

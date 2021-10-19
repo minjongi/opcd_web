@@ -1,0 +1,109 @@
+.input-container {
+    margin-bottom: 10px;
+
+    .text-input {
+        display: flex;
+        flex-direction: row;
+        padding: 5px 8px;
+        user-select: none;
+        border: 1px solid $input-border-color;
+        background-color: $input-back-color;
+
+        input,
+        textarea {
+            outline: 0;
+            border: 0;
+            flex: 1;
+            background-color: transparent!important;
+            color: #fff;
+        }
+
+        &.readonly {
+            border-color: $gray-800;
+            input,
+            textarea {
+                color: $gray-300;
+            }
+        }
+        &.white {
+            background-color: #fff;
+            border: 1px solid #fff;
+            color: $primary;
+            input,
+            textarea {
+                color: $primary;
+            }
+        }
+        &.light {
+            background-color: transparent;
+            color: $primary;
+            input,
+            textarea {
+                color: $primary;
+            }
+        }
+        &.sm {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            input,
+            textarea {
+                font-size: 14px;
+            }
+        }
+        &.bottom_lined {
+            border: 0;
+            border-bottom: 1px solid $input-border-color;
+        }
+    }
+}
+
+.select-container {
+    margin-bottom: 10px;
+    .select {
+        user-select: none;
+        background-color: $input-back-color;
+        select {
+            border: 0;
+            width: 100%;
+            outline: none;
+            border: 1px solid $input-border-color;
+            background-color: transparent;
+            color: #fff;
+            padding: 7px 8px;
+        }
+        &.light {
+            background-color: transparent;
+            color: $primary;
+            select {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+    .react-datepicker__input-container{
+        padding: 5px 8px;
+        user-select: none;
+        border: 1px solid $input-border-color;
+        background-color: transparent;
+        color: $primary;
+        border-radius: 0.25rem;
+        input {
+            width: 100%;
+            outline: 0;
+            border: 0;
+            color: $primary;
+        }
+    }
+}
+
+.error-message {
+    color: $error;
+    font-size: 0.7rem;
+}
+.helper-message {
+    color: $gray-400;
+    font-size: 0.7rem;
+}

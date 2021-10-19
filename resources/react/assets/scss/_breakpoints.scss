@@ -1,0 +1,33 @@
+$breakpoints: (
+  xs: (
+    min-width: 560px,
+  ),
+  sm: (
+    min-width: 640px,
+  ),
+  md: (
+    min-width: 768px,
+  ),
+  lg: (
+    min-width: 1024px,
+  ),
+  xl: (
+    min-width: 1280px,
+  ),
+  xxl: (
+    min-width: 1536px,
+  ),
+  xxxl: (
+    min-width: 1770px,
+  ),
+) !default;
+
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

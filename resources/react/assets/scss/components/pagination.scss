@@ -1,0 +1,40 @@
+.op-pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .page-button {
+        background-color: transparent;
+        border-color: $gray-600;
+        color: $gray-600;
+        &:hover {
+            background-color: #f0f0f0;
+            color: $primary;
+        }
+    }
+    .page-button.light {
+        &:hover {
+            background-color: $primary;
+            color: #f0f0f0;
+        }
+    }
+
+    .page-item {
+        color: $gray-600;
+        padding: 0 1rem;
+        cursor: pointer;
+        user-select: none;
+        &.selected {
+            color: #fff;
+        }
+    }
+
+    &.light {
+        .page-item {
+            &.selected {
+                color: #000;
+            }
+        }
+    }
+}

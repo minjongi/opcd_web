@@ -1,0 +1,42 @@
+
+.common-layout {
+    font-family: 'TTNormsPro-Medium', 'Noto Sans KR';
+    font-weight: 400;
+    min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 114px);
+    contain: content;
+    background-color: $primary;
+    color: #fff;
+    &.light {
+        background-color: #fff;
+        color: $primary;
+    }
+    .content {
+        flex: 1;
+    }
+}
+
+.section-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include mq('sm') {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.scroll-modal-body {
+    max-height: calc(100vh - 300px);
+}
+
+label.light {
+    color: $primary!important;
+}

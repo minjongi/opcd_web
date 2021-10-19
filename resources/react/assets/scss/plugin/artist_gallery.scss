@@ -1,0 +1,36 @@
+.artist-gallery {
+    .artist-item {
+        background-color: $purple-500;
+        margin-bottom: 15px;
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .item-title {
+            background-color: $purple-600;
+            text-align: center;
+            padding: 1rem .2rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .row {
+            margin-left: -5px;
+            margin-right: -5px;
+            justify-content: center;
+            .col {
+                padding-left: 5px;
+                padding-right: 5px;
+                flex-wrap: wrap;
+                min-width: 33.33%;
+                max-width: 33.33%;
+            }
+        }
+        .artist-item {
+            .item-title {
+                font-size: 12px;
+            }
+        }
+    }
+}

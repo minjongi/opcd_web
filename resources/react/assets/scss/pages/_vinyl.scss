@@ -1,0 +1,89 @@
+#page-lplibrary {
+    
+    .op-navs {
+        // justify-content: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        font-size: 22px;
+        font-weight: bold;
+        .op-nav-divider {
+            font-size: 18px;
+            font-weight: 400;
+            color: $gray-400;
+            margin-left: .6rem;
+            margin-right: .6rem;
+        }
+        .op-nav-item {
+            white-space: nowrap;
+        }
+        @media only screen and (max-width : 500px) {
+            font-size: 18px;
+            .op-nav-divider {
+                font-size: 16px;
+                margin-left: .3rem;
+                margin-right: .3rem;
+            }
+        }
+    }
+
+    .lp-library-gallery {
+        min-height: 200px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .selected-card {
+            max-width: 200px;
+        }
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        .input-wrapper {
+            flex: 1;
+            border: 2px solid #9a9a9a;
+            max-width: 640px;
+            padding: 6px 16px;
+            input {
+                width: 100%;
+                outline: 0;
+                border: 0;
+                background-color: transparent;
+                color: #fff;
+            }
+            .search-icon {
+                display: none;
+            }
+        }
+        .search-button {
+            outline: 0;
+            margin-left: 16px;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #9a9a9a;
+            padding: 6px 16px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .input-wrapper {
+                display: flex;
+                align-items: center;
+                padding: 8px 16px;
+                input {
+                    flex: 1;
+                }
+                .search-icon {
+                    display: block;
+                }
+            }
+            .search-button {
+                display: none;
+            }
+        }
+    }
+}

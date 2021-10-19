@@ -1,0 +1,140 @@
+#main-banner {
+    .banner-item {
+        position: relative;
+        padding-bottom: 530px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @media only screen and (max-width: 768px) {
+            padding-bottom: 60%;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            bottom: 2rem;
+            width: 100%;
+            .section-block {
+                position: relative;
+                max-width: 980px;
+                margin: auto;
+                background-color: rgba($color: #000000, $alpha: 0.75);
+            }
+            .content-wrapper {
+                display: flex;
+                align-items: center;
+                height: auto;
+                padding-left: 40px;
+                padding-right: 40px;
+                padding-top: 40px;
+                padding-bottom: 48px;
+                @include mq('md'){
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    height: 120px;    
+                }
+                .content {
+                    width: calc(100% - 154px);
+                    .title {
+                        font-size: 32px;
+                        line-height: 1;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-transform: uppercase;
+                        margin-bottom: 12px;
+                    }
+                    .description {
+                        font-size: 16px;
+                        line-height: 1;
+                        margin: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        text-transform: uppercase;
+                    }
+                    @media only screen and (max-width: 576px) {
+                        width: 100%;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        .description {
+                            font-size: 24px;
+                        }
+                    }
+                }
+                .more-button-wrapper {
+                    min-width: 95px;
+                    width: 95px;
+                    .more-view-btn {
+                        background-color: transparent;
+                        border: 1px solid #fff;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        padding: 10px 0;
+                        border-radius: 3px;
+                    }
+                }
+            }
+            .banner-dots {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                span {
+                    display: block;
+                    background-color: #999;
+                    width: 6px;
+                    height: 6px;
+                    margin-right: 5px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &.active {
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-slider {
+        .slick-arrow {
+            display: none!important;
+        }
+        .slick-dots {
+            bottom: -1rem;
+            li {
+                margin: 0;
+                width: 12px;
+                height: 12px;
+                button {
+                    width: 12px;
+                    height: 12px;
+                    &::before {
+                        content: "";
+                        color: white;
+                        background-color: white;
+                        font-size: 2rem;
+                        width: 6px;
+                        height: 6px;
+                        // border-radius: 5px;
+                        top: 6px;
+                    }
+                }
+                // &:first-child{
+                //     button::before{
+                //         border-start-start-radius: 3px;
+                //         border-end-start-radius: 3px;
+                //     }
+                // }
+                // &:last-child {
+                //     button::before{
+                //         border-start-end-radius: 3px;
+                //         border-end-end-radius: 3px;
+                //     }
+                // }
+            }
+        }
+    }
+}

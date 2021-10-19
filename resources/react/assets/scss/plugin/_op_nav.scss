@@ -1,0 +1,17 @@
+.op-navs {
+    display: flex;
+    align-items: center;
+    .op-nav-item {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        &.active{
+            color: $purple-200!important;
+        }
+    }
+    &.light {
+        .op-nav-item {
+            color: $primary;
+        }
+    }
+}

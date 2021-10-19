@@ -1,0 +1,15 @@
+.op-tag-item {
+    background-color: $purple-400;
+    color: $gray-100;
+    padding: 0 5px;
+    border-radius: 3px;
+    margin-bottom: .2rem;
+
+    svg {
+        color: $gray-400;
+        cursor: pointer;
+        &:hover {
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+.metismenu {
+    margin: 0;
+    li {
+        display: block;
+        width: 100%;
+    }
+    .mm-collapse {
+        display: none;
+        &:not(.mm-show) {
+            display: none;
+        }
+        &.mm-show {
+            display: block
+        }
+    }
+
+    .mm-collapsing {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        transition-timing-function: ease;
+        transition-duration: .35s;
+        transition-property: height, visibility;
+    }
+}
+
+
+.vertical-menu {
+    width: $sidebar-width;
+    z-index: 1001;
+    background: $gray-900;
+    bottom: 0;
+    margin-top: 0;
+    position: fixed;
+    top: $header-height;
+    box-shadow: $box-shadow;
+}
+
+.main-content {
+    margin-left: $sidebar-width;
+    overflow: hidden;
+
+    .content {
+        padding: 0 15px 10px 15px;
+        margin-top: $header-height;
+    }
+}
+
+
+#sidebar-menu {
+    padding: 10px 0 30px 0;
+
+    .mm-active {
+        >.has-arrow {
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .has-arrow {
+        &:after {
+            content: "\203A";
+            // font-family: 'Material Design Icons';
+            display: block;
+            float: right;
+            transition: transform .2s;
+            font-size: 1.6rem;
+            line-height: 0.8rem;
+        }
+    }
+
+    ul {
+        li {
+            a {
+                display: block;
+                padding: 8px 20px;
+                color: $gray-400;
+                position: relative;
+                font-size: 13.3px;
+                transition: all .4s;
+                text-decoration: none;
+
+                i {
+                    display: inline-block;
+                    min-width: 1.60rem;
+                    padding-bottom: .125em;
+                    font-size: 1rem;
+                    line-height: 1.40625rem;
+                    vertical-align: middle;
+                    color: $sidebar-menu-item-icon-color;
+                    transition: all .4s;
+                }
+
+                &:hover {
+                    color: $gray-100;
+                }
+
+                &.mm-active {
+                    background-color: $gray-800;
+                }
+            }
+
+            ul.sub-menu {
+                padding: 0;
+
+                li {
+
+                    a {
+                        padding: 5px 20px 5px 32px;
+                        font-size: 13px;
+                        color: $gray-500;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $gray-100;
+                        }
+
+                        &.mm-active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.menu-title {
+    padding: 32px 16px 5px 16px !important;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: $gray-700;
+    font-weight: bold;
+}
+
+.mm-active {
+    color: $sidebar-menu-item-active-color !important;
+    .active {
+        color: $sidebar-menu-item-active-color !important;
+    }
+    > i {
+        color: $sidebar-menu-item-active-color !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .vertical-menu {
+        transform: translateX(-$sidebar-width);
+        transition: .3s transform;
+    }
+    .vertical-menu.mobile-menu-show {
+        transform: translateX(0);
+        transition: .5s transform;
+    }
+    .main-content {
+        margin-left: 0 !important;
+    }
+}

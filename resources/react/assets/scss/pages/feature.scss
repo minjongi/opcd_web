@@ -1,0 +1,97 @@
+#page-feature {
+    
+    .feature-detail {
+        padding-bottom: 5rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid $border-color;
+        
+        .title-bar {
+            display: flex;
+            .title {
+                flex: 1;
+                font-size: 24px;
+                line-height: 1;
+                margin-bottom: 40px;
+            }
+        }
+        .description {
+            margin-bottom: 0;
+            color: $gray-300;
+            line-height: 1rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        .category {
+            font-size: 1rem;
+            color: $purple-100;
+            margin-bottom: 0;
+            line-height: 1.8rem;
+            margin-right: 1rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            background-color: $gray-800;
+        }
+        .tool-bar {
+            display: flex;
+            align-items: center;
+            img {
+                width: 32px;
+                height: auto;
+                margin-left: 12px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .op-navs {
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 22px;
+        font-weight: bold;
+        .op-nav-divider {
+            font-size: 18px;
+            font-weight: 400;
+            color: $gray-400;
+            margin-left: .6rem;
+            margin-right: .6rem;
+        }
+        @media only screen and (max-width : 500px) {
+            justify-content: space-between;
+            font-size: 18px;
+            .op-nav-divider {
+                font-size: 16px;
+                margin-left: .3rem;
+                margin-right: .3rem;
+            }
+        }
+    }
+
+    .more_btn {
+        @include mq('md') {
+            font-size: 18px;
+            line-height: 1;
+            width: 220px;
+            margin: auto;
+            padding-top: 14px;
+            padding-bottom: 13px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+        }
+    }
+
+    .tag-container {
+        color: $gray-500;
+        span {
+            font-size: 14px;
+            line-height: 20px;
+            white-space: nowrap;
+            border: 1px solid $gray-500;
+            color: $gray-500;
+            &:hover {
+                border: 1px solid #fff;
+                background-color: #fff;
+                color: $gray-900;
+            }
+        }
+    }
+}

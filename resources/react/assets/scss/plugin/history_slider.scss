@@ -1,0 +1,119 @@
+.history-slider {
+    border: 1px solid $border-color;
+    padding: 2rem 0;
+    margin: 0 3rem;
+    &__link {
+        color: #fff;
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    &__item {
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        .slider-image {
+            width: 288px;
+            overflow: hidden;
+            margin: .5rem;
+            .image {
+                padding-bottom: 60%;
+                height: 0;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        .slider-content {
+            flex: 1;
+            text-align: left;
+            margin: .5rem;
+            .title {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+                word-break: break-all;
+            }
+            p {
+                font-size: 1rem;
+                color: $gray-700;
+                word-break: break-all;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            flex-direction: column-reverse;
+            .slider-content {
+                .title {
+                    text-align: center;
+                }
+            }
+            .slider-image {
+                width: 100%;
+            }
+        }
+    }
+
+    .slick-slider {
+        .slick-arrow.custom {
+            &.slick-prev::before,
+            &.slick-next::before {
+                display: none;
+            }
+
+            &.slick-prev {
+                background-color: $gray-800;
+                width: 4.2rem;
+                height: 4.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                left: -3rem;
+                z-index: 999;
+            }
+
+            &.slick-next {
+                background-color: $gray-800;
+                width: 4.2rem;
+                height: 4.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: -3rem;
+                z-index: 999;
+            }
+            
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
+            @media only screen and (max-width: 768px) {
+                &.slick-prev {
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    left: -2rem;
+                }
+    
+                &.slick-next {
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    right: -2rem;
+                }
+            }
+        }
+        .slick-dots {
+            bottom: -76px;
+            li button::before {
+                color: white;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        margin: 0 2rem;
+    }
+}

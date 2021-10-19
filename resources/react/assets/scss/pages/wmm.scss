@@ -1,0 +1,56 @@
+#page-history {
+    .section {
+        margin-bottom: 5rem;
+        .section-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 36px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .winner-confirm {
+        text-align: center;
+        @media only screen and (max-width: 768px) {
+            h3 {
+                font-size: 1.2rem!important;
+            }
+        }
+    }
+    .about-content-section {
+        text-align: center;
+        word-break: keep-all;
+        .mark-text {
+            font-size: 60px;
+        }
+        span {
+            display: block;
+        }
+        @media only screen and (max-width: 768px) {
+            .mark-text {
+                font-size: 34px;
+            }
+            span {
+                display: inline;
+            }
+        }
+    }
+}
+
+#page-songcamp {
+    .songcamp-container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 0 4rem 0;
+        .songcamp-banner {
+            margin-bottom: 4rem;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+} 
