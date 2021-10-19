@@ -99,49 +99,49 @@ const LoginForm = ({onChangePage}) => {
                 </div>
             </div>
 
-            <div className="my-5 border-b">{' '}</div>
+            {/*<div className="my-5 border-b">{' '}</div>*/}
 
-            <div className="text-center">
-                <div className="font-22 mb-4">OR LOGIN WITH</div>
-                <div>
-                    <a href={`${process.env.MIX_API_URL}/login/google`} className="text-decoration-none">
-                        <Button
-                            className="mb-2 font-16 btn-contain"
-                            label={(
-                                <div className="op-social-btn">
-                                    <img src="/images/icons/google.png"/>
-                                    <span>Google로 로그인</span>
-                                </div>
-                            )}
-                        />
-                    </a>
-                    
-                    <a href={`${process.env.MIX_API_URL}/login/naver`} className="text-decoration-none">
-                        <Button
-                            className="mb-2 font-16 btn-contain"
-                            label={(
-                                <div className="op-social-btn">
-                                    <img src="/images/icons/naver.png"/>
-                                    <span>네이버로 로그인</span>
-                                </div>
-                            )}
-                        />
-                    </a>
-                    
-                    <a href={`${process.env.MIX_API_URL}/login/kakao`} className="text-decoration-none">
-                        <Button
-                            className="mb-2 font-16 btn-contain"
-                            label={(
-                                <div className="op-social-btn">
-                                    <img src="/images/icons/kakaotalk.png"/>
-                                    <span>카카오로 로그인</span>
-                                </div>
-                            )}
-                        />
-                    </a>
-                    
-                </div>
-            </div>
+            {/*<div className="text-center">*/}
+            {/*    <div className="font-22 mb-4">OR LOGIN WITH</div>*/}
+            {/*    <div>*/}
+            {/*        <a href={`${process.env.MIX_API_URL}/login/google`} className="text-decoration-none">*/}
+            {/*            <Button*/}
+            {/*                className="mb-2 font-16 btn-contain"*/}
+            {/*                label={(*/}
+            {/*                    <div className="op-social-btn">*/}
+            {/*                        <img src="/images/icons/google.png"/>*/}
+            {/*                        <span>Google로 로그인</span>*/}
+            {/*                    </div>*/}
+            {/*                )}*/}
+            {/*            />*/}
+            {/*        </a>*/}
+            {/*        */}
+            {/*        <a href={`${process.env.MIX_API_URL}/login/naver`} className="text-decoration-none">*/}
+            {/*            <Button*/}
+            {/*                className="mb-2 font-16 btn-contain"*/}
+            {/*                label={(*/}
+            {/*                    <div className="op-social-btn">*/}
+            {/*                        <img src="/images/icons/naver.png"/>*/}
+            {/*                        <span>네이버로 로그인</span>*/}
+            {/*                    </div>*/}
+            {/*                )}*/}
+            {/*            />*/}
+            {/*        </a>*/}
+            {/*        */}
+            {/*        <a href={`${process.env.MIX_API_URL}/login/kakao`} className="text-decoration-none">*/}
+            {/*            <Button*/}
+            {/*                className="mb-2 font-16 btn-contain"*/}
+            {/*                label={(*/}
+            {/*                    <div className="op-social-btn">*/}
+            {/*                        <img src="/images/icons/kakaotalk.png"/>*/}
+            {/*                        <span>카카오로 로그인</span>*/}
+            {/*                    </div>*/}
+            {/*                )}*/}
+            {/*            />*/}
+            {/*        </a>*/}
+            {/*        */}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
 }

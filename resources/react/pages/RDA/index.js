@@ -137,6 +137,7 @@ const RDA = () => {
 
     const handleOpenModal = () => {
       if(!validateForm()) return;
+      window.scrollTo(0, 0);
       setOpenModal(true);
     }
 
