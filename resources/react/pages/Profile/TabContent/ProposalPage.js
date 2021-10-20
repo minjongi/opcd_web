@@ -31,14 +31,14 @@ const ProposalPage = ({onSelect}) => {
                     onClick={() => onSelect(item)}/>
             )}
 
-            <div className="border-b mb-3 mt-5 pb-2">BEATBOX</div>
-            {beatboxApplicants.map((item, index) => 
-                <Button
-                    key={index}
-                    label={item.campaign && item.campaign.name || ''}
-                    className="btn-outline mb-2 text-left right-arrow"
-                    onClick={() => onSelect(item)}/>
-            )}
+            {/*<div className="border-b mb-3 mt-5 pb-2">BEATBOX</div>*/}
+            {/*{beatboxApplicants.map((item, index) => */}
+            {/*    <Button*/}
+            {/*        key={index}*/}
+            {/*        label={item.campaign && item.campaign.name || ''}*/}
+            {/*        className="btn-outline mb-2 text-left right-arrow"*/}
+            {/*        onClick={() => onSelect(item)}/>*/}
+            {/*)}*/}
 
             <div className="border-b mb-3 mt-5 pb-2">VINYL</div>
             {vinylApplicants.map((item, index) => 

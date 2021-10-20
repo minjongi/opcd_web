@@ -45,7 +45,7 @@ const MyPage = () => {
                                     />
                                 </Col>
                                 <Col className="px-0">
-                                    <Button label="내 시청서 관리"
+                                    <Button label="내 신청서 관리"
                                         className={`dark ${tab === 2 ? "btn-contain" : "btn-outline disabled"}`}
                                         onClick={() => handleChangeTab(2)}
                                     />

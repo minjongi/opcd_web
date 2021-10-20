@@ -21,6 +21,10 @@ const Footer = () => {
         });
     }
 
+    const handleScrollTop = function handleScrollTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
     return (
         <div className="footer-container desktop">
             <div className="section-container">
@@ -41,13 +45,13 @@ const Footer = () => {
                         <Col sm={4}>
                             <Row>
                                 <Col>
-                                    <Link to="/privacy_policy?type=use" className="mb-40p text-decoration-none">
+                                    <Link to="/privacy_policy?type=use" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">
                                         <p className="">이용약관</p>
                                     </Link>
-                                    <Link to="/privacy_policy?type=personal" className="mb-40p text-decoration-none">
+                                    <Link to="/privacy_policy?type=personal" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">
                                         <p className="">개인정보취급방침</p>
                                     </Link>
-                                    <Link to="/faq" className="mb-40p text-decoration-none">
+                                    <Link to="/faq" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">
                                         <p className="">FAQ</p>
                                     </Link>            
                                 </Col>
@@ -70,7 +74,7 @@ const Footer = () => {
                         <Col sm={4}>
                             <div className="d-flex justify-content-between align-items-center mb-36p">
                                 <p className="mb-0">공지사항</p>
-                                <Link to="/notices" className="more-notice">
+                                <Link to="/notices" onClick={() => handleScrollTop()} className="more-notice">
                                     <p className="mb-0">더보기</p>
                                 </Link>
                             </div>
