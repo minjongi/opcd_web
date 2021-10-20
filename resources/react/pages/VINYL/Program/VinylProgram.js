@@ -77,7 +77,7 @@ const VinylProgram = () => {
                 <div className="songcamp-container">
                     <h2 className="text-center font-weight-bold text-ttnorm-bd mb-4">VINYL</h2>
                     <div className="songcamp-banner">
-                        <img src="/images/banner_03.jpg" />
+                        <img src="/images/comingsoon.png" />
                     </div>
                     
                     {campaigns && !!campaigns.length && 
