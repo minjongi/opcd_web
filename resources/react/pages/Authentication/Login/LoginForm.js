@@ -102,7 +102,7 @@ const LoginForm = ({onChangePage}) => {
             <div className="my-5 border-b">{' '}</div>
 
             <div className="text-center">
-                <div className="font-22 mb-4">OR LOGIN WIT<a href={`${process.env.MIX_API_URL}/login/kakao`} style={{color: '#FFFFFF', textDecoration: 'none'}}>H</a></div>
+                <div className="font-22 mb-4">OR LOGIN WITH</div>
                 <div>
                     <a href={`${process.env.MIX_API_URL}/login/google`} className="text-decoration-none">
                         <Button
@@ -128,17 +128,17 @@ const LoginForm = ({onChangePage}) => {
                         />
                     </a>
 
-                    {/*<a href={`${process.env.MIX_API_URL}/login/kakao`} className="text-decoration-none">*/}
-                    {/*    <Button*/}
-                    {/*        className="mb-2 font-16 btn-contain"*/}
-                    {/*        label={(*/}
-                    {/*            <div className="op-social-btn">*/}
-                    {/*                <img src="/images/icons/kakaotalk.png"/>*/}
-                    {/*                <span>카카오로 로그인</span>*/}
-                    {/*            </div>*/}
-                    {/*        )}*/}
-                    {/*    />*/}
-                    {/*</a>*/}
+                    <a href={`${process.env.MIX_API_URL}/login/kakao`} className="text-decoration-none">
+                        <Button
+                            className="mb-2 font-16 btn-contain"
+                            label={(
+                                <div className="op-social-btn">
+                                    <img src="/images/icons/kakaotalk.png"/>
+                                    <span>카카오로 로그인</span>
+                                </div>
+                            )}
+                        />
+                    </a>
 
                 </div>
             </div>
