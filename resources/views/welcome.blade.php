@@ -8,6 +8,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
     <!-- Styles -->
     <link href="{{ asset(mix('css/app.css'), true) }}" rel="stylesheet">
 
