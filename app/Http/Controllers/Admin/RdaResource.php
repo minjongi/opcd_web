@@ -201,7 +201,7 @@ class RdaResource extends Controller
 		if(file_exists($filename)){
 			return response()->json([
                 'status' => 'success',
-                'filename' => '/rda.zip'
+                'filename' => '/storage/rda.zip'
             ]);
 		}else{
 			return response()->json([
