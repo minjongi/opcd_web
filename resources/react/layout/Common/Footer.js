@@ -51,9 +51,9 @@ const Footer = () => {
                                     <Link to="/privacy_policy?type=personal" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">
                                         <p className="">개인정보취급방침</p>
                                     </Link>
-                                    <Link to="/faq" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">
-                                        <p className="">FAQ</p>
-                                    </Link>            
+                                    {/*<Link to="/faq" onClick={() => handleScrollTop()} className="mb-40p text-decoration-none">*/}
+                                    {/*    <p className="">FAQ</p>*/}
+                                    {/*</Link>*/}
                                 </Col>
                                 <Col>
                                     <p className="mb-30p">SNS 최신 소식</p>

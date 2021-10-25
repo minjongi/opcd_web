@@ -12,7 +12,7 @@ class Rda extends Model
      * @var array
      */
     protected $fillable = [
-        'genre', 'artist_name', 'song_name', 'email', 'phone', 'code', 'url', 'file_name', 'status'
+        'genre', 'artist_name', 'song_name', 'position', 'email', 'phone', 'code', 'url', 'file_name', 'status'
     ];
 
     protected $appends = [

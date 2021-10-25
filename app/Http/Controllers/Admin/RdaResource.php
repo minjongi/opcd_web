@@ -185,7 +185,7 @@ class RdaResource extends Controller
         $rdalist = Rda::whereIn('id', $ids)->get();
 
         $zip = new ZipArchive();
-		$filename = public_path("rda.zip");
+		$filename = public_path("storage/rda.zip");
 
 		if($zip->open($filename, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRUE){
 			

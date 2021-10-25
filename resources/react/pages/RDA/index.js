@@ -7,8 +7,10 @@ import Slider from "react-slick";
 import { CircleFullSpinner } from '../../components';
 import RdaSelectBox from '../../components/RdaSelectBox';
 import { fileExtension } from '../../helpers/utils';
+import { defaultPositions } from '../../constants/defaults';
 
 import { GetRdaOptions, PostRda, GetRdaCampaings, PostRdaCampaingRequest } from '../../store/rda/api'
+import {CheckBox} from "../../components/form";
 
 const settings = {
   dots: true,
@@ -23,6 +25,8 @@ const settings = {
 const defaultData = {
   artist_name: '',
   song_name: '',
+  position: '',
+  position_etc: '',
   genre: '',
   email: '',
   phone: '',
@@ -45,6 +49,13 @@ const RDA = () => {
 
     const [openModal, setOpenModal] = useState(false);
     const [completed, setCompleted] = useState(false);
+
+    const [position, setPosition] = useState({'Vocal': false, 'Producer': false, 'Instrumentalist': false, 'Etc': false});
+
+    const handleCheckField = (e) => {
+        const {id, checked, value} = e.target;
+        setPosition({...position, [id]: checked});
+    }
 
     useEffect(() => {
       GetRdaOptions().then(res => {
@@ -76,6 +87,7 @@ const RDA = () => {
       let fdata = new FormData();
       fdata.append('artist_name', formData.artist_name);
       fdata.append('song_name', formData.song_name);
+      fdata.append('position', formData.position);
       fdata.append('genre', formData.genre);
       fdata.append('email', formData.email);
       fdata.append('phone', formData.phone);
@@ -101,6 +113,25 @@ const RDA = () => {
       }
       if(!formData.song_name){
         toast.error('Song Name을 입력하세요.');
+        return false;
+      }
+
+      formData.position = '';
+      for (const positionKey in position) {
+        if (position[positionKey]) {
+          if (positionKey === 'Etc') {
+            if (!formData.position_etc) {
+              toast.error('Position Etc를 입력하세요.');
+              return false;
+            }
+            formData.position += ((formData.position) ? ',' : '') + formData.position_etc;
+            continue;
+          }
+          formData.position += ((formData.position) ? ',' : '') + positionKey;
+        }
+      }
+      if(!formData.position){
+        toast.error('Position을 입력하세요.');
         return false;
       }
       if(!formData.genre){
@@ -209,6 +240,10 @@ const RDA = () => {
                 <Col xs={6}>
                   <p className="mb-4p color-400">Song name</p>
                   <p className="mb-20p">{formData.song_name || " "}</p>
+                </Col>
+                <Col xs={6}>
+                  <p className="mb-4p color-400">Position</p>
+                  <p className="mb-20p">{formData.position || " "}</p>
                 </Col>
                 <Col xs={6}>
                   <p className="mb-4p color-400">Genre</p>
@@ -337,6 +372,66 @@ const RDA = () => {
                     name="song_name"
                     value={formData.song_name || ''}
                     onChange={handleChangeField}/>
+                </div>
+
+                <div className="inline-group align-items-center mb-40p">
+                  <label>Position</label>
+                  {/*<input*/}
+                  {/*    id="position"*/}
+                  {/*    name="position"*/}
+                  {/*    value={formData.position || ''}*/}
+                  {/*    onChange={handleChangeField}/>*/}
+                  <ul className="checkbox-ul">
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          id="Vocal"
+                          value="Vocal"
+                          checked={position['Vocal'] || false}
+                          onChange={handleCheckField}/>
+                          Vocal
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          id="Producer"
+                          value="Producer"
+                          checked={position['Producer'] || false}
+                          onChange={handleCheckField}/>
+                          Producer
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          id="Instrumentalist"
+                          value="Instrumentalist"
+                          checked={position['Instrumentalist'] || false}
+                          onChange={handleCheckField}/>
+                          Instrumentalist
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          id="Etc"
+                          value="Etc"
+                          checked={position['Etc'] || false}
+                          onChange={handleCheckField}/>
+                          Etc
+                      </label>
+                      <input
+                        id="position_etc"
+                        name="position_etc"
+                        value={formData.position_etc || ''}
+                        onChange={handleChangeField}/>
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="inline-group align-items-center mb-40p">

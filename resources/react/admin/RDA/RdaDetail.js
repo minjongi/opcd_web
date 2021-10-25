@@ -40,6 +40,10 @@ const RdaDetailForm = ({data, open, onClose}) => {
                         <p>{data.song_name}</p>
                     </Col>
                     <Col xs={6}>
+                        <p className="color-400 mb-1">Position</p>
+                        <p>{data.position}</p>
+                    </Col>
+                    <Col xs={6}>
                         <p className="color-400 mb-1">Genre</p>
                         <p>{data.genre_text}</p>
                     </Col>

@@ -49,12 +49,13 @@ class RdaController extends Controller
         $this->validate($request, [
             'artist_name' => 'required|string',
             'song_name' => 'required|string',
+            'position' => 'required|string',
             'email' => 'required|string',
             'phone' => 'required|string',
             'genre' => 'required|string'
         ]);
 
-        $data = $request->only(['artist_name', 'song_name', 'email', 'phone', 'genre']);
+        $data = $request->only(['artist_name', 'song_name', 'position', 'email', 'phone', 'genre']);
         $rda = Rda::create($data);
         
         $rda->code = date('ym').$rda->genre.strtoupper(Str::random(5));
