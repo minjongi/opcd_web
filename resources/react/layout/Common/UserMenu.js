@@ -16,7 +16,6 @@ const UserMenu = ({showSearch, toggleSearch}) => {
         history.push("/main");
     };
 
-    console.log(toggleSearch)
     return (
         <ul className="text-ttnorm-md">
             {userState && userState.id && userState.role === "USER" ? (

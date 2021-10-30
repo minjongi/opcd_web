@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
+import TagContainer from '../tag/TagContainer';
 import { formattedDate, fetchTags, encodeStr } from '../../helpers/utils';
 
 const FeatureCard = ({data, fullView}) => {
@@ -25,7 +27,8 @@ const FeatureCard = ({data, fullView}) => {
                 <div className="description two-line-truncate h-two-line">{description}</div>
 
                 <div className="mt-2 tag-container truncate">
-                    {fetchTags(tag).map((t, index) =>
+                    <TagContainer tags={fetchTags(tag)}/>
+                    {/* {fetchTags(tag).map((t, index) =>
                         <span
                             key={index}
                             className="d-inline-block cursor-pointer back-primary mr-2 mb-1 px-1"
@@ -34,7 +37,7 @@ const FeatureCard = ({data, fullView}) => {
                                 history.push(`/search?kword=${encodeStr(t)}`)
                             }}
                         >{t}</span>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>
