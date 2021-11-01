@@ -337,3 +337,12 @@
 .mr-8p {
     margin-right: 8px;
 }
+
+.truncated_tag {
+    &::before {
+        content: "...";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
