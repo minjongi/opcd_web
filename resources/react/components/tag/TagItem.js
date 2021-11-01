@@ -1,6 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
+import { useHistory } from 'react-router-dom';
+
+import { encodeStr } from '../../helpers/utils';
 
 const TagItem = ({text}) => {
+  const history = useHistory();
   const tagRef = useRef();
   const [status, setStatus] = useState('');
   if(!text) return null;
@@ -27,7 +31,14 @@ const TagItem = ({text}) => {
 
   return (
     <div ref={tagRef} className={`relative d-inline-block pr-2 ${status === 'truncated' ? 'truncated_tag' : ''}`} >
-      <span className="cursor-pointer back-primary px-1" style={{visibility: status === 'show' ? 'visible' : 'hidden'}}>
+      <span
+        className="cursor-pointer back-primary px-1"
+        style={{visibility: status === 'show' ? 'visible' : 'hidden'}}
+        onClick={(e) => {
+          e.preventDefault();
+          history.push(`/search?kword=${encodeStr(text)}`)
+        }}
+      >
         {text}
       </span>
     </div>
